@@ -1,0 +1,219 @@
+/* Would've preferred to add these in typescript instead as it's cleaner (imo). */
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: rgba(120, 120, 120, 1);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* #region Pokedex top container */
+.pokedex_top {
+    background-color: rgba(60, 60, 60, 1);background-color: rgba(60, 60, 60, 1);
+    width: 100%;
+    min-width: 800px;
+    border-radius: 8px;
+    margin: 8px 5px 0;
+    padding-bottom: 15px;
+}
+.pokedex_top_text {
+    font-size: 72px;
+    color: rgb(255, 255, 0);
+    padding: 15px 40px 0;
+    margin: 0;
+}
+.pokedex_top_info {
+    display: flex;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    margin-left: 20px;
+} 
+/* #endregion */
+
+/* #region Download Pokedex Container */
+.download_pokedex_container {
+    background-color: rgba(80, 80, 80, 1);
+    width: 300px;
+    margin: 0px 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 0 5px 5px;
+}
+.download_pokedex_info {
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+.download_pokedex_input_button_container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.download_pokedex_input {
+    width: 100px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+}
+.download_pokedex_button {
+    padding: 10px 40px;
+    font-size: 16px;
+    margin-left: 15px;
+    border-radius: 4px;
+    background-color: rgba(200, 200, 200, 1);
+    transition: 0.2s;
+    color: rgb(0, 0, 0);
+    border-top-left-radius: 2px solid rgb(0, 0, 0);
+    cursor: pointer;
+}
+.download_pokedex_button:not(:disabled):hover {
+    background-color: rgba(80, 200, 80, 1);
+    scale: calc(1.03);
+    border-radius: 5px;
+}
+.download_pokedex_button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.download_pokedex_progressbar, .download_pokedex_progressbar_value {
+    height: 25px;
+}
+.download_pokedex_progressbar {
+    width: 100%;
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 0, 0);
+    align-items: center;
+}
+.download_pokedex_progressbar_value {
+    background-color: #4caf50;
+    width: 0%;
+}
+.download_pokedex_progressbar_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+.download_pokedex_status {
+    font-size: 15px;
+    color: rgb(0, 0, 0);
+}
+/* #endregion */
+
+/* #region Display Pokedex Container */
+.display_pokedex_container {
+    background-color: rgba(80, 80, 80, 1);
+    width: auto;
+    min-width: 500px;
+    height: auto;
+    max-height: 600px;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin: 0 15px 15px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.top_settings_container {
+    margin: 15px 20px 5px;
+    display: flex;
+    flex-direction: row;
+}
+.pokemon_sort {
+    padding: 5px;
+    font-size: 14px;
+}
+.pokemon_search_input {
+    margin-left: 5px;
+    padding: 5px;
+}
+
+.pokemon_card_infobox,
+.pokemon_types_container,
+.pokemon_description,
+.pokemon_info_text {
+    display: none;
+}
+
+.pokemon_card_container_selected .pokemon_card_infobox,
+.pokemon_card_container_selected .pokemon_types_container,
+.pokemon_card_container_selected .pokemon_description,
+.pokemon_card_container_selected .pokemon_info_text {
+    display: block;
+}
+
+.pokemon_default_container {
+    padding: 0;
+}
+.pokemon_card_container, .pokemon_card_container_selected {
+    width: 25%;
+    border-radius: 4px;
+    padding: 8px;
+    background-color: white;
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.25);
+    transition: 0.3s;
+}
+.pokemon_card_container_selected {
+    width: 100%;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+.pokemon_card_container:hover, .pokemon_card_container_selected:hover {
+    scale: calc(1.02);
+    box-shadow: 6px 6px rgba(0, 0, 0, 0.5);
+}
+.pokemon_card_image {
+    background-color: lightgrey;
+    width: 100%;
+    height: auto;
+    object-fit: fill;
+    border-radius: 4px;
+}
+.pokemon_id {
+    font-size: 10px;
+    color:rgba(120, 120, 120, 1);
+}
+.pokemon_card_infobox {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 20px;
+}
+.pokemon_name {
+    font-size: 20px;
+    margin: 5px 0;
+}
+.pokemon_info_text {
+    font-size: 16px;
+    color:rgb(0, 132, 255);
+}
+
+.pokemon_types_container {
+    padding-left: 10px;
+    display: flex;
+    flex-wrap: wrap;                                        
+}
+.pokemon_type {
+    display: inline-block;
+    font-size: 14px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin: 3px;
+}
+/* #endregion */
+
+@media (max-width: 600px) {
+    .display_pokedex_container {
+        grid-template-columns: 1fr;
+    }
+}
